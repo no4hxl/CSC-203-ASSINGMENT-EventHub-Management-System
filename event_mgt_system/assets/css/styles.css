@@ -1,0 +1,383 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #7209b7;
+    --accent: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --success: #4cc9f0;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7ff;
+    color: var(--dark);
+    line-height: 1.6;
+    padding-bottom: 40px;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.5rem 5%;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo i {
+    color: var(--accent);
+}
+
+.tagline {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* =========================================
+   3. LAYOUT UTILITIES
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.page-title h1:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.page-subtitle {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. EVENTS GRID & CARDS
+   ========================================= */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.event-header {
+    padding: 1.5rem 1.5rem 0.5rem;
+    position: relative;
+}
+
+.event-date {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+    line-height: 1.3;
+}
+
+.event-body {
+    padding: 0 1.5rem 1.5rem;
+    flex-grow: 1;
+}
+
+.event-description {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.detail-item i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.event-footer {
+    padding: 1.2rem 1.5rem;
+    background: var(--light-gray);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.register-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.event-id {
+    color: var(--gray);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   5. REGISTRATION FORM STYLES (NEW)
+   ========================================= */
+.form-container {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   6. MISC & FOOTER
+   ========================================= */
+.no-events {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    grid-column: 1 / -1;
+}
+
+.no-events i {
+    font-size: 3rem;
+    color: var(--light-gray);
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light-gray);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   7. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .page-title h1 {
+        font-size: 2rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 4%;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .register-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+}
+/* Styling for the clickable admin link in header */
+.admin-link a:hover {
+    color: white !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    opacity: 1;
+}
+
+/* Ensure logo link doesn't change color on click */
+.header-content a {
+    display: inline-block;
+}
+/* Search Container Styling */
+.search-container input.form-control {
+    border-radius: 50px; /* Makes it rounded like a modern search bar */
+    border: 2px solid var(--light-gray);
+    box-shadow: var(--shadow-light);
+}
+
+.search-container input.form-control:focus {
+    border-color: var(--primary);
+}
+
+.admin-link a:hover {
+    color: white !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
