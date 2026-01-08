@@ -12,7 +12,6 @@ Here is a quick breakdown of the tools we are using:
 * **PHP**: This is the "Brain" of the website. It handles things like checking if a password is correct or calculating how many people have registered for an event.
 * **phpMyAdmin**: A simple web tool included with XAMPP that lets you see and manage your MySQL database tables without writing code.
 
-* 
 ---
 
 ## 🚀 Key Features
